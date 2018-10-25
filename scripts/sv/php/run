@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -x
+
+#sv start socklog-unix || exit 1
+
+source /etc/envvars
+
+mkdir -p /run/php
+
+exec 2>&1
+exec php-fpm7.0 --nodaemonize
