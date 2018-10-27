@@ -15,9 +15,6 @@ RUN apt-get update             \
 
 ENV LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
-# Utilities
-#RUN apt-get install -y --no-install-recommends vim less net-tools inetutils-ping wget curl git telnet nmap socat dnsutils netcat tree htop unzip sudo software-properties-common jq psmisc iproute python ssh rsync gettext-base
-
 #Required
 RUN apt-get install -y   \
             cron         \
@@ -91,5 +88,4 @@ COPY scripts/sv /etc/service
 
 COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
-#CMD bash -c 'export > /etc/envvars && /usr/sbin/runsvdir-start'
 CMD /usr/local/bin/entrypoint.sh
