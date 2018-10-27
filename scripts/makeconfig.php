@@ -45,7 +45,6 @@ $rendered = "<?php\n\$parameters = ".var_export($parameters, true).";\n";
 
 $status = file_put_contents($path, $rendered);
 
-fwrite($stdout, "Rendered configuration:\n\n$rendered\n");
 if ($status === false) {
 	fwrite($stderr, "\nCould not write configuration file to $path, you can create this file with the following contents:\n\n$rendered\n");
 }
