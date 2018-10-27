@@ -12,5 +12,9 @@ You can pull it directly from the Docker hub:
 $ docker pull mayeu/mautic
 ```
 
+The tags used follow this convention
+`mayeu/mautic:<mautic-version>-<incremental-number>`. The incremental number is
+bumped on every bugfix and feature.
+
 Documentation of all the possible env variable is lacking but you can check
 [this file](./config/local.php) for a list.
