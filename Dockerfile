@@ -79,7 +79,7 @@ RUN mkdir -p /var/lib/mautic-default
 COPY config/local.php /var/lib/mautic-default/local.php
 
 COPY config/default /etc/nginx/sites-enabled/
-COPY config/crontab /
+COPY config/crontab /etc/cron.d/mautic
 COPY config/php.ini /etc/php/7.0/fpm/
 
 # Output logs on stdout & stderr

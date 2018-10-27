@@ -1,10 +1,10 @@
 #!/bin/bash
 
+set -x
+
 #sv start socklog-unix || exit 1
 
 source /etc/envvars
-
-crontab -u www-data /crontab
 
 exec 2>&1
 exec cron -f
