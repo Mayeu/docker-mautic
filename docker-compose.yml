@@ -12,7 +12,6 @@ services:
       MAUTIC_DB_NAME: mautic
       MAUTIC_DB_PASSWORD: mauticdbpass
       MAUTIC_TRUSTED_PROXIES: 0.0.0.0/0
-      MAUTIC_MAILER_FROM_NAME: 'Mailer name'
       MAUTIC_MAILER_FROM_EMAIL: 'root@example.org'
       MAUTIC_MAILER_SMTP_HOST: test
       MAUTIC_MAILER_SMTP_PASSWORD: test
