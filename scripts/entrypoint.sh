@@ -22,8 +22,7 @@ aswww="sudo -u www-data -g www-data"
 mkdir -p /var/log/mautic
 
 # We ensure all the right are good to go
-chown -R www-data:www-data /var/www/html
-chown -R www-data:www-data /var/log/mautic
+chown -R www-data:www-data /var/www/html /var/log/mautic
 
 # First, we ensure that all the local folder exist.
 # This is needed if one mount a new empty config folder
@@ -47,10 +46,10 @@ then
 fi
 
 # Now we run a serie of mautic preparation commandes
-logger "clearing Mautic cache"
-$aswww /var/www/html/app/console cache:clear
-logger "warming Mautic cache"
-$aswww /var/www/html/app/console cache:warm
+#logger "clearing Mautic cache"
+#$aswww /var/www/html/app/console cache:clear
+#logger "warming Mautic cache"
+#$aswww /var/www/html/app/console cache:warm
 #logger "running database migration for Mautic"
 #$aswww /var/www/html/app/console doctrine:migration:migrate --no-interaction
 
