@@ -86,6 +86,8 @@ RUN sed -i -e 's|error_log.*;|error_log /dev/stderr;|' /etc/nginx/nginx.conf \
 # Add runit services
 COPY scripts/sv /etc/service
 
+EXPOSE 80/tcp
+
 COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 CMD /usr/local/bin/entrypoint.sh
