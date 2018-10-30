@@ -16,8 +16,8 @@ function return_or_default($to_return, $default_value = null)
 
 $parameters = array(
     'api_enabled'       => getenv('MAUTIC_API_ENABLE') !== "true" ? true : false,
-	'db_driver'         => 'pdo_mysql',
-	'install_source'    => 'Docker',
+    'db_driver'         => 'pdo_mysql',
+    'install_source'    => 'Docker',
     'db_host'           => return_or_default('MAUTIC_DB_HOST'),
     'db_port'           => return_or_default('MAUTIC_DB_PORT', '3306'),
     'db_name'           => return_or_default('MAUTIC_DB_NAME', 'mautic'),
@@ -27,7 +27,7 @@ $parameters = array(
     'db_backup_tables'  => 0,
     'db_backup_prefix'  => 'bak_',
     'trusted_proxies'   => getenv('MAUTIC_TRUSTED_PROXIES') ? explode(',', getenv('MAUTIC_TRUSTED_PROXIES')) : null,
-    #'mailer_from_name'  => return_or_default('MAUTIC_MAILER_FROM_NAME'),
+    //'mailer_from_name'  => return_or_default('MAUTIC_MAILER_FROM_NAME'),
     'mailer_from_email' => return_or_default('MAUTIC_MAILER_FROM_EMAIL'),
     'mailer_transport'  => return_or_default('MAUTIC_MAILER_TRANSPORT', 'smtp'),
     'mailer_host'       => return_or_default('MAUTIC_MAILER_SMTP_HOST'),
@@ -36,8 +36,8 @@ $parameters = array(
     'mailer_encryption' => return_or_default('MAUTIC_MAILER_SMTP_ENCRYPTION', 'tls'),
     'mailer_auth_mode'  => return_or_default('MAUTIC_MAILER_SMTP_AUTH_MODE', 'plain'),
     'mailer_spool_type' => 'file',
-	'mailer_spool_path' => '%kernel.root_dir%/spool',
-    'site_url'          => return_or_default('MAUTIC_SITE_URL')
+    'mailer_spool_path' => '%kernel.root_dir%/spool',
+    //'site_url'          => return_or_default('MAUTIC_SITE_URL')
 );
 
 $path     = getenv('MAUTIC_LOCAL_CONFIG') . '/local.php';

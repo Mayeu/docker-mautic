@@ -1,19 +1,20 @@
 #! /usr/bin/env bash
 
-#set -ex
+set -e
 
 #
 # This script assume your database server is running. No checks will be done
 #
 
 export MAUTIC_PATH=/var/www/html
-export MAUTIC_LOCAL_CACHE="${MAUTIC_PATH}/app/local/cache/prod"
-export MAUTIC_LOCAL_CONFIG="${MAUTIC_PATH}/app/local/config"
-export MAUTIC_LOCAL_THEMES="${MAUTIC_PATH}/app/local/themes"
-export MAUTIC_LOCAL_IDP="${MAUTIC_PATH}/app/local/idp"
-export MAUTIC_LOCAL_MEDIA_FILES="${MAUTIC_PATH}/app/local/media/files"
-export MAUTIC_LOCAL_MEDIA_IMAGES="${MAUTIC_PATH}/app/local/media/images"
-export MAUTIC_LOCAL_PLUGINS="${MAUTIC_PATH}/app/local/plugins"
+export MAUTIC_LOCAL_PATH="${MAUTIC_PATH}/app/local"
+export MAUTIC_LOCAL_CACHE="${MAUTIC_LOCAL_PATH}/cache/prod"
+export MAUTIC_LOCAL_CONFIG="${MAUTIC_LOCAL_PATH}/config"
+export MAUTIC_LOCAL_THEMES="${MAUTIC_LOCAL_PATH}/themes"
+export MAUTIC_LOCAL_IDP="${MAUTIC_LOCAL_PATH}/idp"
+export MAUTIC_LOCAL_MEDIA_FILES="${MAUTIC_LOCAL_PATH}/media/files"
+export MAUTIC_LOCAL_MEDIA_IMAGES="${MAUTIC_LOCAL_PATH}/media/images"
+export MAUTIC_LOCAL_PLUGINS="${MAUTIC_LOCAL_PATH}/plugins"
 
 # We are going to sudo around a lot
 aswww="sudo -u www-data -g www-data"
@@ -22,7 +23,7 @@ aswww="sudo -u www-data -g www-data"
 mkdir -p /var/log/mautic
 
 # We ensure all the right are good to go
-chown -R www-data:www-data /var/www/html /var/log/mautic
+chown -R www-data:www-data "${MAUTIC_LOCAL_PATH}" /var/log/mautic &
 
 # First, we ensure that all the local folder exist.
 # This is needed if one mount a new empty config folder

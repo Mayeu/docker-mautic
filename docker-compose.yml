@@ -15,7 +15,6 @@ services:
       MAUTIC_MAILER_FROM_EMAIL: 'root@example.org'
       MAUTIC_MAILER_SMTP_HOST: test
       MAUTIC_MAILER_SMTP_PASSWORD: test
-      MAUTIC_SITE_URL: http://localhost:8080
     volumes:
       - "./mautic-local:/var/www/html/app/local"
   mysql:
